@@ -11,11 +11,13 @@ function App() {
       <div className="container d-flex flex-column min-vh-100">
         <Header />
 
-        <Routes>
-          <Route path="/" element={<Orders />} />
-          <Route path="/create" element={<Create />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <section className="py-3">
+          <Routes>
+            <Route path="/" element={<Orders />} />
+            <Route path="/create" element={<Create />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </section>
 
         <Footer />
       </div>
