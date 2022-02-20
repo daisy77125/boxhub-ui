@@ -29,14 +29,6 @@ const Pagination = ({
             {i}
           </a>
         </li>
-
-        // <Pagination.Item
-        //     key={i}
-        //     active={i === currentPage}
-        //     onClick={() => onPageChange(i)}
-        //   >
-        //     {i}
-        //   </Pagination.Item>
       );
     }
 
@@ -48,11 +40,6 @@ const Pagination = ({
   return (
     <nav>
       <ul className="pagination">
-        {/* <Pagination.Prev
-          onClick={() => onPageChange(currentPage - 1)}
-          disabled={currentPage === 1}
-        /> */}
-
         <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
           <a
             className="page-link"
@@ -64,11 +51,6 @@ const Pagination = ({
         </li>
 
         {paginationItems}
-
-        {/* <Pagination.Next
-          onClick={() => onPageChange(currentPage + 1)}
-          disabled={currentPage === totalPages}
-        /> */}
 
         <li
           className={`page-item ${
