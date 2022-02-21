@@ -7,7 +7,7 @@ const Home = () => {
     isLoading,
     error,
     data: orders,
-  } = useFetch("http://localhost:5000/orders");
+  } = useFetch(process.env.REACT_APP_BACKEND_API_ENDPOINT + "/orders");
 
   return (
     <>
