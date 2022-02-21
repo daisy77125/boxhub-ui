@@ -7,8 +7,10 @@ const useFetch = (url) => {
   const [data, setData] = useState(null);
 
   useEffect(() => {
+    const cancelTokenSource = axios.CancelToken.source();
+
     axios
-      .get(url)
+      .get(url, { cancelToken: cancelTokenSource.token })
       .then((response) => {
         setData(response.data);
         setIsLoading(false);
@@ -17,6 +19,10 @@ const useFetch = (url) => {
         setError(error.message);
         setIsLoading(false);
       });
+
+    return () => {
+      cancelTokenSource.cancel();
+    };
   }, [url]);
 
   return { isLoading, error, data };
