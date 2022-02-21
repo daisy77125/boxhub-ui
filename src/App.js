@@ -1,9 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Orders from "./components/Orders";
-import Create from "./components/Create";
-import NotFound from "./components/NotFound";
+import Home from "./Pages/Home";
+import Create from "./Pages/Create";
+import NotFound from "./Pages/NotFound";
 
 function App() {
   return (
@@ -13,7 +13,7 @@ function App() {
 
         <section className="py-3">
           <Routes>
-            <Route path="/" element={<Orders />} />
+            <Route path="/" element={<Home />} />
             <Route path="/create" element={<Create />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
